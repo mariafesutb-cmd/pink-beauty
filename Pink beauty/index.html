@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pink Beauty - Loja de Maquiagem</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff5fa;
+    color: #333;
+}
+
+header {
+    background: #ff69a6;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 35px;
+}
+
+nav {
+    background: #ffb6d2;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #7a1644;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+.banner {
+    text-align: center;
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #ffc1dc, #ffe5f0);
+}
+
+.banner h2 {
+    font-size: 32px;
+    color: #b52c69;
+}
+
+.banner p {
+    margin: 15px;
+}
+
+.banner button {
+    background: #e83e85;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+h2.titulo {
+    text-align: center;
+    margin: 35px;
+    color: #d63384;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 25px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px #e9b4ca;
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 12px;
+    color: #bd286d;
+}
+
+.preco {
+    color: #e83e85;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.card button {
+    background: #ff69a6;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #d63384;
+}
+
+.carrinho {
+    background: white;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.carrinho h2 {
+    color: #d63384;
+    margin-bottom: 15px;
+}
+
+.carrinho button {
+    background: #ff69a6;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin-top: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+footer {
+    background: #ff69a6;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+@media(max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>💗 Pink Beauty</h1>
+    <p>Sua beleza, seu brilho!</p>
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#carrinho">Carrinho</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<section class="banner" id="inicio">
+    <h2>Realce sua beleza!</h2>
+    <p>Descubra os melhores produtos de maquiagem e beleza.</p>
+    <button onclick="document.getElementById('produtos').scrollIntoView()">
+        Comprar agora
+    </button>
+</section>
+
+<h2 class="titulo" id="produtos">✨ Nossos Produtos</h2>
+
+<section class="produtos">
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500" alt="Batom">
+        <h3>Batom Rosa</h3>
+        <p>Cor intensa e acabamento perfeito.</p>
+        <p class="preco">R$ 29,90</p>
+        <button onclick="adicionar('Batom Rosa', 29.90)">Adicionar ao carrinho</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500" alt="Maquiagem">
+        <h3>Kit de Maquiagem</h3>
+        <p>Produtos para arrasar em qualquer ocasião.</p>
+        <p class="preco">R$ 89,90</p>
+        <button onclick="adicionar('Kit de Maquiagem', 89.90)">Adicionar ao carrinho</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500" alt="Pincéis">
+        <h3>Kit de Pincéis</h3>
+        <p>Pincéis macios para uma maquiagem incrível.</p>
+        <p class="preco">R$ 49,90</p>
+        <button onclick="adicionar('Kit de Pincéis', 49.90)">Adicionar ao carrinho</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=500" alt="Perfume">
+        <h3>Perfume Feminino</h3>
+        <p>Fragrância delicada e marcante.</p>
+        <p class="preco">R$ 119,90</p>
+        <button onclick="adicionar('Perfume Feminino', 119.90)">Adicionar ao carrinho</button>
+    </div>
+
+</section>
+
+<section class="carrinho" id="carrinho">
+    <h2>🛍️ Meu Carrinho</h2>
+    <div id="lista">Seu carrinho está vazio.</div>
+    <h3 id="total">Total: R$ 0,00</h3>
+    <button onclick="finalizar()">Finalizar compra</button>
+</section>
+
+<footer id="contato">
+    <h3>Pink Beauty 💗</h3>
+    <p>Contato: contato@pinkbeauty.com</p>
+    <p>Instagram: @pinkbeauty</p>
+    <p>© 2026 Pink Beauty - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+let carrinho = [];
+
+function adicionar(nome, preco) {
+    carrinho.push({nome, preco});
+    atualizarCarrinho();
+    alert(nome + " adicionado ao carrinho!");
+}
+
+function atualizarCarrinho() {
+    let lista = document.getElementById("lista");
+    let total = 0;
+
+    lista.innerHTML = "";
+
+    carrinho.forEach((produto, index) => {
+        total += produto.preco;
+
+        lista.innerHTML += `
+            <p>
+                ${produto.nome} - R$ ${produto.preco.toFixed(2)}
+                <button onclick="remover(${index})">Remover</button>
+            </p>
+        `;
+    });
+
+    if(carrinho.length === 0) {
+        lista.innerHTML = "Seu carrinho está vazio.";
+    }
+
+    document.getElementById("total").innerText =
+        "Total: R$ " + total.toFixed(2).replace(".", ",");
+}
+
+function remover(index) {
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
+}
+
+function finalizar() {
+    if(carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    alert("Compra simulada com sucesso! Obrigado por comprar na Pink Beauty!");
+    carrinho = [];
+    atualizarCarrinho();
+}
+</script>
+
+</body>
+</html>
